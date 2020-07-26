@@ -3,7 +3,10 @@ import 'package:flutter/widgets.dart';
 
 import '../models/meal.dart';
 
+import '../screens/meal_detail_screen.dart';
+
 class MealItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
   final int duration;
@@ -11,6 +14,7 @@ class MealItem extends StatelessWidget {
   final Affordability affordability;
 
   MealItem({
+    @required this.id,
     @required this.title,
     @required this.imageUrl,
     @required this.duration,
@@ -18,7 +22,9 @@ class MealItem extends StatelessWidget {
     @required this.affordability,
   });
 
-  void selectMenu() {}
+  void selectMenu(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(MealDetailScreen.routeName, arguments: id);
+  }
 
   String get compleityText {
     switch (complexity) {
@@ -49,7 +55,7 @@ class MealItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: selectMenu,
+      onTap: () => selectMenu(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
