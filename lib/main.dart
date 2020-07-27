@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Recipeze',
       theme: ThemeData(
         primarySwatch: Colors.pink,
-        accentColor: Colors.deepPurple,
+        accentColor: Colors.lime,
         canvasColor: Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: TextTheme(
