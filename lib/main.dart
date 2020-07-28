@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'screens/filters_screen.dart';
 // import 'screens/tabs_top_screen.dart';
 import 'screens/tabs_bottom_screen.dart';
 import './screens/categories_screen.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
       routes: {
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+        FiltersScreen.routeName: (ctx) => FiltersScreen(),
       },
       // If somehow user came to a route
       // which is not defined.
